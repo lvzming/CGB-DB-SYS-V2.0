@@ -33,7 +33,7 @@ public class SysUserServiceImpl implements SysUserService {
 	@Override
 	public Page<SysUserDeptVo> findPageObjects(String username, Integer pageCurrent) {
 		ArgumentValidator.instance()
-		.notNullNotZero(pageCurrent, "当前页面不正确");
+		.notZero(pageCurrent, "当前页面不正确");
 		
 		int pageSize = DEFAULT_PAGE_SIZE;
 		int startIndex = (pageCurrent-1) * pageSize;
@@ -61,9 +61,9 @@ public class SysUserServiceImpl implements SysUserService {
 	public int saveObject(SysUser user, Integer[] roleIds) {
 		ArgumentValidator.instance()
 		.notNull(user)
-		.notNullNotBlank(user.getUsername(), "用户名不能为空")
-		.notNullNotBlank(user.getPassword(), "密码不能为空")
-		.notNullNotEmpty(roleIds, "必须指定至少一个角色");
+		.notBlank(user.getUsername(), "用户名不能为空")
+		.notBlank(user.getPassword(), "密码不能为空")
+		.notEmpty(roleIds, "必须指定至少一个角色");
 		
 		String source = user.getPassword();
 		String salt = UUID.randomUUID().toString();
@@ -94,8 +94,8 @@ public class SysUserServiceImpl implements SysUserService {
 	public int updateRecordWithRoleById(SysUser user, Integer[] roleIds) {
 		ArgumentValidator.instance()
 		.notNull(user)
-		.notNullNotBlank(user.getUsername(), "用户名不能为空")
-		.notNullNotEmpty(roleIds, "必须指定至少一个角色");
+		.notBlank(user.getUsername(), "用户名不能为空")
+		.notEmpty(roleIds, "必须指定至少一个角色");
 		
 		int rows = sysUserDAO.updateRecord(user);
 		ResultValidator.validateResult(rows, "该用户已不存在");
@@ -108,8 +108,8 @@ public class SysUserServiceImpl implements SysUserService {
 	public int updatePasswordById(String oldPassword, String newPassword, String confirmPassword) {
 		// 验证参数
 		ArgumentValidator.instance()
-		.notNullNotBlank(oldPassword, "请输入原密码")
-		.notNullNotBlank(newPassword, "请输入新密码");
+		.notBlank(oldPassword, "请输入原密码")
+		.notBlank(newPassword, "请输入新密码");
 		if (!newPassword.equals(confirmPassword)) 
 			throw new IllegalArgumentException("两次密码输入不相同");
 		

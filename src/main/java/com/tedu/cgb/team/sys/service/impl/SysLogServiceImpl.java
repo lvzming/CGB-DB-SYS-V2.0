@@ -28,7 +28,7 @@ public class SysLogServiceImpl implements SysLogService {
 	@Override
 	public Page<SysLog> findPage(String username, Integer pageCurrent) {
 		ArgumentValidator.instance()
-		.notNullNotZero(pageCurrent, "页面参数不合法");
+		.notZero(pageCurrent, "页面参数不合法");
 		
 		int rowCount = sysLogDAO.getRowCountByUsername(username);
 		ResultValidator.validateResult(rowCount, "没有找到相应的记录");
@@ -45,7 +45,7 @@ public class SysLogServiceImpl implements SysLogService {
 	@Override
 	public int deleteByIds(Integer... ids) {
 		ArgumentValidator.instance()
-		.notNullNotEmpty(ids, "id参数不合法");
+		.notEmpty(ids, "id参数不合法");
 		
 		int rows = sysLogDAO.deleteRecordsByIds(ids);
 		
