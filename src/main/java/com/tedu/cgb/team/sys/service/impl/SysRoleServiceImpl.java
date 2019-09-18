@@ -43,7 +43,7 @@ public class SysRoleServiceImpl implements SysRoleService {
 		ArgumentValidator.instance()
 		.notNull(role)
 		.notBlank(role.getName(), "名字不能为空")
-		.notNullNotEmpty(menuIds, "必须给角色赋予权限");
+		.notEmpty(menuIds, "必须给角色赋予权限");
 		
 		int rows = sysRoleDAO.insertRecord(role);
 		ResultValidator.validateResult(rows, "新增失败，可能是id值重复");
@@ -57,7 +57,7 @@ public class SysRoleServiceImpl implements SysRoleService {
 		ArgumentValidator.instance()
 		.notNull(role)
 		.notBlank(role.getName(), "名字不能为空")
-		.notNullNotEmpty(menuIds, "必须给角色赋予权限");
+		.notEmpty(menuIds, "必须给角色赋予权限");
 
 		
 		int rows = sysRoleDAO.updateRecord(role);
@@ -71,7 +71,7 @@ public class SysRoleServiceImpl implements SysRoleService {
 	@Override
 	public Page<SysRole> findPageObjects(String name, Integer pageCurrent) {
 		ArgumentValidator.instance()
-		.notNullNotZero(pageCurrent, "当前页码不正确");
+		.notZero(pageCurrent, "当前页码不正确");
 		
 		List<SysRole> records;
 		int pageSize = DEFAULT_PAGE_SIZE;
