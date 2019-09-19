@@ -42,6 +42,12 @@ public class SpringShiroConfiguration {
 		// anon  表示允许不认证匿名访问
 		// authc 表示需要认证访问
 		map.put("/bower_components/**", "anon");
+		map.put("/css/**", "anon");
+		map.put("/js/**", "anon");
+		map.put("/img/**", "anon");
+		map.put("/img2/**", "anon");
+		map.put("/image/**", "anon");
+		map.put("/webfonts/**", "anon");
 		map.put("/build/**", "anon");
 		map.put("/dist/**", "anon");
 		map.put("/plugins/**", "anon");

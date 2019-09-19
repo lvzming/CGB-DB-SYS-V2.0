@@ -27,5 +27,8 @@ public class PageController {
 	public String doLoginUI() {
 		return "login";
 	}
-	
+	@RequestMapping("home")
+	public String home() {
+		return "shop/index";
+	}
 }
