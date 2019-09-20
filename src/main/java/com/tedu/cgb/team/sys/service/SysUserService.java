@@ -7,6 +7,7 @@ import com.tedu.cgb.team.common.vo.SysUserDeptVo;
 import com.tedu.cgb.team.sys.entity.SysUser;
 
 public interface SysUserService {
+	
 	Page<SysUserDeptVo> findPageObjects(String username, Integer pageCurrent);
 	
 	int validById(Integer id, Integer valid, String modifiedUser);

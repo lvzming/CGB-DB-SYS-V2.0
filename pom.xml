@@ -82,6 +82,20 @@
 			<version>1.4.1</version>
 		</dependency>
 
+		<!--导出Excel-->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.10-FINAL</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.10-FINAL</version>
+        </dependency>
+        <!--导出Excel end-->
+
+
 	</dependencies>
 
 	<build>

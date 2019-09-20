@@ -27,7 +27,7 @@ public class TimeAssessInterceptor implements HandlerInterceptor {
 		// 获取允许访问的开始时间
 		long start = calendar.getTimeInMillis();
 		// 获取允许访问的结束时间
-		calendar.set(Calendar.HOUR_OF_DAY, 18);
+		calendar.set(Calendar.HOUR_OF_DAY, 24);
 		long end = calendar.getTimeInMillis();
 		// 获取当前时间
 		long current = System.currentTimeMillis();

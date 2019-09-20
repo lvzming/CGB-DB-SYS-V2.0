@@ -9,6 +9,8 @@ import com.tedu.cgb.team.sys.entity.SysUser;
 
 @Mapper
 public interface SysUserDAO {
+	/**查询所有用户信息,供导出Excel使用*/
+	List<SysUserDeptVo> findAllUser();
 	/**
 	 * 根据id进行对用户的启用/禁用进行修改
 	 * @param id

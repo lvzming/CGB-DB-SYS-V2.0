@@ -27,6 +27,10 @@ public class PageController {
 	public String doLoginUI() {
 		return "login";
 	}
+	@RequestMapping("doRegisterUI")
+	public String doRegisterUI() {
+		return "shop/register";
+	}
 	@RequestMapping("home")
 	public String home() {
 		return "shop/index";

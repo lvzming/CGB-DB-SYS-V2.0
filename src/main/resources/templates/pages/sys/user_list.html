@@ -15,6 +15,7 @@
 							</button>
 							<button type="button" class="btn btn-default btn-add">添加</button>
 							<button type="button" class="btn btn-default btn-update">修改</button>
+							<button type="button" class="btn btn-default down-load">导出Excel</button>
 						</div>
 					</div>
 				</div>
@@ -52,9 +53,15 @@
 	   });
 	   $(".input-group-btn")
 	   .on("click",".btn-search",doQueryObjects)
-	   .on("click",".btn-add,.btn-update",doLoadEditUI);
+	   .on("click",".btn-add,.btn-update",doLoadEditUI)
+	   .on("click",".down-load",downLoad);
 	   $("tbody").on("click",".btn-valid",doValidById);
    });
+   
+   function downLoad(){
+	   var url="excel/exportStatisticsNum/User"
+		location.href=url;
+   }
    
    function doLoadEditUI(){
 	   //1.判定点击的对象
