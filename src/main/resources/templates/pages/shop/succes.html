@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <!-- <link rel="stylesheet" href="css/model.css"> -->
+    <link rel="stylesheet" href="css/all.css">
+
+    <title>体育</title>
+    <style>
+        .login li a:hover {
+            color: #007bff !important;
+            background-color: #f8f9fa !important;
+            text-decoration: none;
+        }
+    
+        .fa-basketball-ball {
+            color: coral;
+            font-size: 60px;
+        }
+    
+        .navbar {
+            opacity: 1;
+        }
+    
+        .fa-thumbs-up {
+            font-size: 2rem;
+            color: #ddd;
+            cursor: pointer;
+            transition: transform 0.5s;
+        }
+    
+        .like {
+            color: red;
+        }
+    
+        .fa-thumbs-up:active {
+            color: red;
+            transform: scale(2, 2);
+            transition: transform 0.1s;
+        }
+    
+        .shop {
+            border-radius: 0;
+            transform: .2;
+        }
+    
+        .shop:hover,
+        .shop:focus {
+            background-color: #CD5555;
+        }
+    
+        .card {
+            border-radius: 0;
+        }
+    
+        .shop a {
+            text-decoration: none;
+            color: #fff;
+        }
+    
+        .card:hover {
+            transform: scale(1.05, 1.05);
+            transition: transform 0.1s;
+        }
+    
+        .act {
+            background-color: #007bff;
+            color: #fff;
+        }
+    
+        .tx {
+            font-size: 2rem;
+            color: #bbb;
+        }
+    
+        .current {
+            transform: scale(1.5, 1.5);
+            color: #666;
+        }
+    
+        #dy:hover {
+            color: #428bca;
+        }
+    
+        .login-tb {
+            border-radius: 50%;
+            font-size: 30px;
+    
+        }
+    
+        /* .login-zh{
+              display: none;
+            } */
+        .login-ewm {
+            display: none;
+        }
+    
+        .login-at {
+            border-bottom: solid #dc3545;
+            ;
+            cursor: pointer;
+        }
+    
+        .login-de {
+            border-bottom: solid #9E9E9E;
+            color: #9E9E9E;
+            cursor: pointer;
+        }
+    
+        .zf {
+    
+            box-shadow: 0px 0px 10px #aaaaaa;
+        }
+    
+        .c-bank {
+            height: 60px;
+            line-height: 55px;
+            border: 3px solid #fff;
+        }
+    
+        #pay {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            line-height: 140px;
+            float: left;
+            font-size: 70px;
+            color: #007bff;
+            border-color: #007bff;
+        }
+        #pay-t
+        {
+            color: #007bff;
+        }
+
+        .fa-hand-peace{
+            transition: transform 2s;
+        }
+
+
+        .contact .form-group .form-control{
+      border-radius: 0;
+    }
+    .fa-phone,.name,
+    .fa-map-marker-alt,
+    .fa-envelope{
+      font-size: 18px;
+    }
+    .f-con{
+      font-size: 10px;
+    } 
+    .footer-social li{
+      width: 35px;
+      height: 35px;
+      background: #9E9E9E;
+      font-size: 15px;
+      border-radius: 50%;
+      padding-top: 10px;
+      color: #fff;   
+    }
+    .footer-social li:hover{
+      color: #fff;  
+      background: orange;
+      cursor: pointer;
+    }
+    </style>
+</head>
+
+<body  data-spy="scroll" data-target="#mylist" data-offset="100">
+    <!-- 以下为模态框内容 -->
+    <!-- 登录 -->
+    <div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered" role="document" style="max-width: 500px;">
+      <div class="modal-content">
+        <div class="modal-header" style="border-bottom: none;">
+          <div class="text-center mt-3 login-at"
+            style="width: 200px;height: 40px;margin-left: 30px;">账号登录</div>
+          <div class=" text-center mt-3 login-de" style="width: 200px;height: 40px;">二维码登录
+          </div>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 10px;">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <!-- 账号登录 -->
+        <div class="modal-body login-zh" >
+          <div style="max-width: 400px;margin-left: 30px;">
+            <form action="denglu.php" method="post">
+              <div class="form-group" >
+                <input type="text" class="form-control" id="num" placeholder="请输入账号">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" id="pwd" placeholder="请输入密码">
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6 ">
+                  <div class="form-check">
+                    <input type="checkbox" name="remember" id="remember" class="form-check-input">
+                    <label for="remember" class="form-check-label">记住账号</label>
+                  </div>
+                </div>
+                <div class="col-md-6 text-right mt-1" style="font-size: 10px">
+                  <span>忘记密码</span>
+                  <span>|</span>
+                  <span>去注册</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-danger btn-block" data-dismiss="modal">登录</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- 二维码登录 -->
+        <div class="modal-body login-ewm" >
+            <div style="display: flex;justify-content:center;">
+            <img src="image/ewm.png" style="max-width: 200px;max-height:200px;" >
+            </div>
+          </div>
+        <div class="modal-footer " style="justify-content:left;">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 pt-3 d-none  d-md-inline">       
+                其他登录方式：&nbsp;        
+              </div>
+              <div class="col-12 col-md-8">  
+              <button type="button" class="btn btn-link login-tb" data-toggle="tooltip" data-placement="top" title="微信登录">
+                <i class="fab fa-weixin" style="color: #28a745;"></i></button>
+              <button type="button" class="btn btn-link login-tb" data-toggle="tooltip" data-placement="top" title="QQ登录"><i
+                  class="fab fa-qq" style="color: #007bff;"></i></button>
+              <button type="button" class="btn btn-link login-tb" data-toggle="tooltip" data-placement="top" title="微博登录"><i
+                  class="fab fa-weibo" style="color: #dc3545;"></i></button>
+              <button type="button" class="btn btn-link login-tb" data-toggle="tooltip" data-placement="top" title="支付宝登录"><i
+                  class="fab fa-alipay" style="color: #007bff;"></i></button>
+              </div>     
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- 以上为模态框内容 -->
+
+
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-light bg-light navbar-expand-md sticky-top" style="margin-top: 10px;height: 30px;">
+        <div class="container">
+            <ul class="navbar-nav mt-1">
+                <li style="list-style-type: none">
+                    <i class="fas fa-home"></i>
+                    <a class="navbar-brand" style="color: #707070;font-size: 12px;" href="index.html">首页</a>
+                </li>
+                <li style="list-style-type: none">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <a class="navbar-brand" style="color: #707070;font-size: 12px;" href="index.html">广东</a>
+                </li>
+            </ul>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#mynav" style="height:20;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse" id="mynav">
+                <ul class="navbar-nav  ml-auto login">
+                    <li style="list-style-type: none;font-size: 12px;">
+                        <a href="#" data-toggle="modal" data-target="#exampleModal">登陆</a>
+                        <span style="color: #007bff ">|</span>
+                        <a href="register.html">注册</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- 图片和进度条 -->
+    <div class="container mt-3 ">
+        <div class="row ">
+            <div class="col-md-4 mt-4 ">
+                <a href="index-2.html"><i class="fas fa-basketball-ball"><span >&nbsp;YH体育</span></i></a> 
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-5 mt-3">
+                <div class="d-flex justify-content-between mb-4">
+                    <i class="fas fa-shopping-cart tx"></i>
+                    <i class="fas fa-file-invoice  tx"></i>
+                    <i class="fab fa-alipay   tx"></i>
+                    <i class="fas fa-gift current tx"></i>
+                </div>
+                <div class="px-4 mb-4">
+                    <div class="progress">
+                        <div class="progress-bar bg-success" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container zf" style="height: 670px;">
+    
+        <div class="row justify-content-center  text-center">
+            <div class="col-12 col-md-9  col-xl-5 col-sm-11" style="margin-top: 150px">
+                <div class="media mt-3">
+                    <div class="mr-3" id="pay" style="border: solid 5px">3</div>
+                    <div class="media-body mt-5">
+                        <div id="pay-t">
+                            <h1>正在支付....</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+        <div class="row justify-content-center  text-center">
+            <div class="col mt-5" id="back">
+    
+            </div>
+        </div>
+    </div>
+    </div>
+
+   
+
+    <!-- 页脚 -->
+    <footer class="footer mt-5 bg-light"  role="contentinfo">
+            <div class="container py-5">
+              <div class="row">
+                  <div class="col-4">
+                      <h5>CONTACT&nbsp;<span style="color: orange">INFO</span></h5>
+                      <ul class="list-unstyled footer-link mt-3">
+                        <li>
+                          <i class="fas fa-phone"></i><span class="ml-3 name" style="color: orange">Telefone</span>
+                          <p class="mt-2 f-con">(000) 123 456 78- (000) 123 4567 89</p>
+                        </li>
+                        <li>
+                          <i class="fas fa-map-marker-alt"></i><span class="ml-3 name" style="color: orange">Address</span>
+                          <p class="mt-2 f-con">2046 Blue Spruce Lane Laurel Canada</p>
+                        </li>
+                        <li>
+                          <i class="fas fa-envelope"></i><span class="ml-3 name" style="color: orange">E mail</span>
+                          <p class="mt-2 f-con">rest@gmail.com - rest@mail.ru</p>
+                        </li>
+                      </ul>
+                  </div>
+                  <div class="col-4">
+                      <h5>LATEST<span style="color: orange"> BLOG POSTS</span></h5>
+                      <ul class="list-unstyled footer-link mt-3">
+                        <li>
+                          <p class="name" style="color: orange">Nov 9-2014</p>
+                          <p class="mt-2 f-con">Lorem ipsum dolor sit amet, consectetur adip iscing elit. Curabitur ut blandit sapien</p>
+                        </li>
+                        <li>
+                          <p class="name" style="color: orange">Sep 8-2014</p>
+                          <p class="mt-2 f-con">Lorem ipsum dolor sit amet, consectetur adip iscing elit. Curabitur ut blandit sapien</p>
+                        </li>
+                      
+                      </ul>
+                  </div>
+                  <div class="col-4">
+                      <h5>PHOTO <span style="color: orange">STREAM</span></h5>
+                      <p class="mt-2 f-con">No content</p>
+                      <h6>Follow <span style="color: orange">US</span></h6>
+                      <ul class="list-unstyled footer-link d-flex footer-social text-center mt-3">
+                          <li class="fab fa-twitter"></li>
+                          <li class="fab fa-facebook-f ml-3"></li>
+                          <li class="fab fa-dribbble ml-3 "></li>
+                          <li class="fab fa-behance ml-3"></li>
+                        </ul>
+                  </div>
+              </div>
+            </div>
+          </footer>
+
+
+    <script src="js/jquery-3.4.0.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.modal-header').on('click', '.login-de', function () {
+                $('.login-at').addClass("login-de")
+                $('.login-de').removeClass("login-at")
+                $(this).removeClass("login-de")
+                $(this).addClass("login-at")
+
+                var a = "账号登录";
+                
+                if ($(this).text() == a) {
+                    $('.login-ewm').hide();
+                    $('.login-zh').show();
+                } else {
+                    $('.login-zh').hide();
+                    $('.login-ewm').show();
+                }
+                })
+        });
+       
+        window.onload = function () {
+            var timer = setInterval(go, 1000);    //定时器
+            var x = 2;
+          
+            function go() {
+                $('#pay').text(x);
+                x--;
+                if (x == -1) {
+                    $('#pay').html("<i class=\"fas fa-check\">");  //要跳转的页面
+                    clearInterval(timer);     //清除定时器
+                    $('#pay-t').html("<h1>支付成功&nbsp;<i class=\"fas fa-hand-peace\"></h1>");
+                    $('#back').html("<a href=\"shop_gwc.html\" >返回购物车列表</a>");
+                }
+            }
+        };
+        
+    
+  
+       
+   </script>
+</body>
+
+</html>
